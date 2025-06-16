@@ -1,5 +1,5 @@
 // String
-import lengthOfLongestSubstring from './string/003-LongestSubstringWithoutRepeatingCharacters';
+import lengthOfLongestSubstring from './array/003-LongestSubstringWithoutRepeatingCharacters';
 
 const s1 = "abcabcbb";
 const s2 = "bbbbb";
