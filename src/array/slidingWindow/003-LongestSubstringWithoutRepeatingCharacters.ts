@@ -5,24 +5,24 @@ export default function lengthOfLongestSubstring(s: string): number {
   let currentSubstring = [];
   const charIndexMap = new Map();
 
-  for(let i = 0; i < s.length; ++i) {    
-    if(!charIndexMap.has(s[i])) {
+  for (let i = 0; i < s.length; ++i) {
+    if (!charIndexMap.has(s[i])) {
       charIndexMap.set(s[i], i);
-      currentSubstring.push(s[i])
+      currentSubstring.push(s[i]);
       if (currentSubstring.length > result) result = currentSubstring.length;
 
       continue;
     }
-    
+
     const indexOfChar = charIndexMap.get(s[i]);
     charIndexMap.clear();
     i = indexOfChar;
     if (currentSubstring.length > result) result = currentSubstring.length;
     currentSubstring = [];
   }
-  
+
   return result;
-};
+}
 
 /*
 ####### My Solution ##########

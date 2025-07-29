@@ -1,9 +1,9 @@
 /**
- * 
+ *
  * @param s - input string which contains characters
  * @param t - input string which contains target characters
  * @returns - the minimum window substring of s which contains all the characters of t
- * 
+ *
  *  在 s 長度最短的 substring 裡面找到所有 t 內包含的字母
  */
 
@@ -82,53 +82,52 @@ function determineLeftIndex(initialIndex: number, s: string, tMap: Map<string, n
 
 // 39 ms
 // 60.09 mb
-export default function minWindow(s: string, t:string): string {
-    if (t.length > s.length) return "";
+export default function minWindow(s: string, t: string): string {
+  if (t.length > s.length) return '';
 
-    const tMap = new Map<string, number>();
-    for (const char of t) {
-      tMap.set(char, (tMap.get(char) || 0) + 1);
-    }
-  
-    const have = new Map<string, number>();
-    const need = tMap.size; // 有幾種字母要湊齊
-    let haveCount = 0;
-  
-    let left = 0;
-    let minLen = Infinity;
-    let resStart = 0;
+  const tMap = new Map<string, number>();
+  for (const char of t) {
+    tMap.set(char, (tMap.get(char) || 0) + 1);
+  }
 
-    for(let right = 0; right < s.length; right++) {
-        const char = s[right];
-        if (tMap.get(char)) {
-            have.set(char, (have.get(char) || 0 + 1));
+  const have = new Map<string, number>();
+  const need = tMap.size; // 有幾種字母要湊齊
+  let haveCount = 0;
 
-            if (have.get(char) === tMap.get(char)){
-                haveCount +=1;
-            }
-        }
+  let left = 0;
+  let minLen = Infinity;
+  let resStart = 0;
 
-        // if all t char have all covered in haveMap
-        while(haveCount === need) {
-            // 更新最短視窗
-            if (right - left + 1 < minLen) {
-                minLen = right - left + 1;
-                resStart = left;
-            }
+  for (let right = 0; right < s.length; right++) {
+    const char = s[right];
+    if (tMap.get(char)) {
+      have.set(char, have.get(char) || 0 + 1);
 
-
-            const leftChar = s[left];
-            if(tMap.has(leftChar)) {
-                have.set(leftChar, have.get(leftChar)! - 1);
-
-                // 只要 have 有足夠該字母數量，就可以讓 left 繼續往前
-                if (have.get(leftChar)! < tMap.get(leftChar)!) {
-                    haveCount -= 1;
-                }
-            }
-            left += 1;
-        }
+      if (have.get(char) === tMap.get(char)) {
+        haveCount += 1;
+      }
     }
 
-    return minLen === Infinity ? "" : s.slice(resStart, resStart + minLen);
+    // if all t char have all covered in haveMap
+    while (haveCount === need) {
+      // 更新最短視窗
+      if (right - left + 1 < minLen) {
+        minLen = right - left + 1;
+        resStart = left;
+      }
+
+      const leftChar = s[left];
+      if (tMap.has(leftChar)) {
+        have.set(leftChar, have.get(leftChar)! - 1);
+
+        // 只要 have 有足夠該字母數量，就可以讓 left 繼續往前
+        if (have.get(leftChar)! < tMap.get(leftChar)!) {
+          haveCount -= 1;
+        }
+      }
+      left += 1;
+    }
+  }
+
+  return minLen === Infinity ? '' : s.slice(resStart, resStart + minLen);
 }

@@ -16,7 +16,6 @@ import { minimunWindowSubstring } from './array/slidingWindow';
 // console.log(lengthOfLongestSubstring(s4)); // 1
 // console.log(lengthOfLongestSubstring(s5)); // 3
 
-
 ///////////////////////////////////////
 /* characterReplacement 
 const s1 = "AABABBA";
@@ -36,9 +35,9 @@ console.log(characterReplacement(s1, k1)); // 4
 
 /* minimunWindowSubstring */
 
-const s1 = "ADO[BECODEBA]NC"; // BANC
-const t1 = "ABC";
-const s2 = "bdab"; // ab
-const t2 = "ab";
+const s1 = 'ADO[BECODEBA]NC'; // BANC
+const t1 = 'ABC';
+const s2 = 'bdab'; // ab
+const t2 = 'ab';
 
 console.log(minimunWindowSubstring(s1, t1));
