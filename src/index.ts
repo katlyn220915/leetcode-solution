@@ -1,6 +1,7 @@
 /* Array */
 import { lengthOfLongestSubstring, characterReplacement } from './array';
 import { minimunWindowSubstring } from './array/slidingWindow';
+import { isValidParentheses } from './stack';
 
 ///////////////////////////////////////
 /* lengthOfLongestSubstring */
@@ -33,7 +34,8 @@ console.log(characterReplacement(s1, k1)); // 4
 
 ////////////////////////////////////////
 
-/* minimunWindowSubstring */
+/*
+// minimunWindowSubstring
 
 const s1 = 'ADO[BECODEBA]NC'; // BANC
 const t1 = 'ABC';
@@ -41,3 +43,26 @@ const s2 = 'bdab'; // ab
 const t2 = 'ab';
 
 console.log(minimunWindowSubstring(s1, t1));
+
+*/
+
+//STACK
+////////////////////////////////////////
+
+// isValidParentheses
+
+const s1 = '()';
+const s2 = '()[]{}'; //['}', ']' , ')'] ['(', '[', '{']
+const s3 = '(]';
+const s4 = '([)]'; // [']', ')'] ['(', '[']
+const s5 = '{[]}'; // ['}', ']'] ['{', '[']
+const s6 = '(';
+const s7 = '([])'; // [')', ']'] ['(', '[']
+
+console.log(isValidParentheses(s1)); // true
+console.log(isValidParentheses(s2)); // true
+console.log(isValidParentheses(s3)); // false
+console.log(isValidParentheses(s4)); // false
+console.log(isValidParentheses(s5)); // true
+console.log(isValidParentheses(s6)); // false
+console.log(isValidParentheses(s7)); // true
