@@ -2,7 +2,7 @@
 
 先進後出，後進先出 LIFO
 
-![Stack Visualization](../assets/stack.jpg)
+![Stack Visualization](./assets/stack.jpg)
 
 堆疊是一種線性資料結構，遵循 LIFO (Last In, First Out) 原則。就像一疊盤子，最後放上去的盤子會最先被取走。
 
