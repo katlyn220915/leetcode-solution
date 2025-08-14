@@ -51,6 +51,7 @@ console.log(minimumWindowSubstring(s1, t1));
 
 // isValidParentheses
 
+/*
 const s1 = '()';
 const s2 = '()[]{}'; //['}', ']' , ')'] ['(', '[', '{']
 const s3 = '(]';
@@ -66,3 +67,19 @@ console.log(isValidParentheses(s4)); // false
 console.log(isValidParentheses(s5)); // true
 console.log(isValidParentheses(s6)); // false
 console.log(isValidParentheses(s7)); // true
+*/
+
+///////////////////////////////////////////////
+/* Binary Search */
+
+import { findMin } from './binarySearch';
+
+const nums1 = [3, 4, 5, 1, 2];
+const nums2 = [4, 5, 6, 7, 0, 1, 2];
+const nums3 = [11, 13, 15, 17];
+const nums4 = [3, 4, 5, 6, 7, 1, 2];
+
+console.log(findMin(nums1)); // 1
+// console.log(findMin(nums2)); // 0
+// console.log(findMin(nums3)); // 11
+// console.log(findMin(nums4)); // 1
